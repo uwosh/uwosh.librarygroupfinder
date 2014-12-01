@@ -1,0 +1,76 @@
+Changelog
+=========
+
+1.2.1b
+-------------------
+- Fixed html rendering issue that happens in Firefox 3.6*
+
+1.2.0b
+-------------------
+- Installation auto-published GroupFinder Folder.
+- Changed GroupFinderEvent creation method.
+- Fixed creation permission issues.
+
+1.1.9b
+-------------------
+- Fixed Viewing issue (css,javascript,html).
+- Fixed View Permission.
+
+1.1.8b
+-------------------
+- Fixed DateTime issue, no longer always GMT-0.
+- Adjusted Permissions, now confidential.
+- Added view for single GroupFinder events.
+- Fixed link issues.
+- Tested in Chrome,Firefox,IE8
+
+1.1.7b
+-------------------
+- Refactored setup process.
+- Fixed staff link issue.
+
+1.1.6b
+-------------------
+- Installable on Plone 4
+
+1.1.5a (alpha-release)
+-------------------
+
+- Added more Automated Setup Functionality
+- Redesigned About page.
+- Fixed phrases and wording.
+- Fixed Logout bug, back button bug.
+
+1.1.4a (alpha-release)
+-------------------
+
+- Finished PDF Services
+- Added about page template
+- Added Staff Folder setups
+  - Create on install
+  - Protected for staff
+- Fixed css issues
+- Setup custom breadcrumbs
+
+
+1.1.3a (alpha-release)
+-------------------
+
+- Finished Webservices
+
+
+1.1.2a (alpha-release)
+-------------------
+
+- Fixed egg issues
+
+1.1.1a (alpha-release)
+-------------------
+
+- Finished Groupfinder content types.
+- Auto-Setup on Install
+
+1.0dev (unreleased)
+-------------------
+
+- Initial release

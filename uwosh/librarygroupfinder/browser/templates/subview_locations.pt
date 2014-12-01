@@ -1,0 +1,28 @@
+<div id="gf_location_content_panel">
+	<div id="gf_location_information">
+		<div class="gf_location_top"></div>
+		<div class="gf_location_bottom">
+			
+			<div>
+				<div class="gf_div_spacer_l"><label>GroupFinder Space<label></div>
+				<div id="gf_panel_location" class="gf_div_spacer_s">-Loading-</div>
+				
+				<div class="gf_div_spacer_l"><label>Location<label></div>
+				<div id="gf_panel_directions" class="gf_div_spacer_s">-Loading-</div>
+			</div>
+			
+			<div>
+				<div class="gf_div_spacer_l"><label>Features<label></div>
+				<div id="gf_panel_roomcontents" class="gf_div_spacer_s">-Loading-</div>
+				                        
+				<div class="gf_div_spacer_l"><label>Key Required<label></div>
+				<div id="gf_panel_key" class="gf_div_spacer_s">-Loading-</div>
+			</div>
+			
+			<div style="clear:both"></div>
+			<div id="gf_panel_note"></div>
+			
+		</div>
+			
+	</div>
+</div>

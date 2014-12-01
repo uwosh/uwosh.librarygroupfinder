@@ -1,0 +1,120 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="uwosh.librarygroupfinder">
+<body>
+
+	<metal:js fill-slot="javascript_head_slot">
+		<script tal:attributes="src string: ++resource++uwosh.librarygroupfinder.javascripts/groupfinderview.js?cache=${view/cacheNumber}" type="text/javascript"></script>
+    </metal:js>
+    
+	<metal:content-title fill-slot="content-title">
+        <h1 class="documentFirstHeading">GroupFinder - Schedule a Study Group</h1>
+	</metal:content-title>
+	<metal:description fill-slot="content-description">
+		<!-- Do nothing, remove Title from Home page -->
+	</metal:description>
+
+	
+	<metal:content-core fill-slot="content-core">
+	    <div id="gf_viewlet_content">
+
+	        <div class="gf_content_view">
+	        
+				<!-- Transparents the Background.-->
+	            <div class="gf_background_fader"></div>
+				
+				<!-- Floating Display for Lcoations Start -->
+	            <div class="gf_floating_display">
+	                <div id="gf_location_information">
+	                	
+	                    <div class="gf_close_box_header">
+	                    	<img tal:attributes="src string:${context/absolute_url}/pb_close.png" alt="Close"/>
+	                    </div>
+						<div class="gf_location_top"></div>
+	                    <div class="gf_location_bottom">
+	                    	<div>
+		                        <div class="gf_div_spacer_l"><label>GroupFinder Space<label></div>
+		                        <div id="gf_panel_location" class="gf_div_spacer_s">---</div>
+		                        
+		                        <div class="gf_div_spacer_l"><label>Location<label></div>
+		                        <div id="gf_panel_directions" class="gf_div_spacer_s">---</div>
+	                        </div>
+							
+							<div>
+	                        	<div class="gf_div_spacer_l"><label>Features</label></div>
+	                        	<div id="gf_panel_roomcontents" class="gf_div_spacer_s">---</div>
+							</div>
+	                    </div>
+	                </div>
+	            </div>
+				<!-- Floating Display for Lcoations End -->
+				
+	            
+	            <!--Search Box Start -->
+	            <div class="gf_nav_main">
+	                <div class="gf_nav_left"><label>Search:</label> <input id="gf_search_box" type="text" /><img  id="gf_search_x" alt="Clear Search" tal:attributes="src string:${context/absolute_url}/++resource++uwosh.librarygroupfinder.stylesheets/images/cancel-icon.png"/></div>
+	                <div class="gf_nav_right">
+	                    <a tal:attributes="href view/createButtonLink" class="gf_create_button_box">
+	                        <img src="++resource++uwosh.librarygroupfinder.stylesheets/images/gf_create_button.png" alt="create" class="gf_create_button" />
+	                    </a>
+	                </div>
+	            </div>
+				<!--Search Box End -->
+	            
+				
+				<!-- Event Rows Start -->
+				<tal:block tal:repeat="results view/getEvents">
+					<div class="gf_top_curve"><div class="gf_bar"></div></div>
+		            <div tal:attributes="class results/css">
+		                <div class="gf_view_border" tal:repeat="node results/events" tal:attributes="id node/id">
+							<div class="gf_view_spacer">
+								<div class="gf_title" tal:condition="node/isPublic">
+									<span class="icon_specialist" tal:content="node/Title" />
+									<img class="icon_specialist" tal:condition="python: view.isSpecialist(node['listCreators'])" tal:attributes="src view/getSpecialistIcon; title view/getSpecialistTooltip" />
+								</div>
+							    <div class="gf_title" tal:condition="not: node/isPublic">Private Group</div>
+							    <!-- <div class="gf_attendence" tal:condition="node/isPublic" tal:content="node/attendence" ></div> -->
+							</div>
+							<div class="gf_view_spacer2">
+							    <div class="gf_view_space">
+							        <span tal:content="node/start"></span>
+							        <span tal:content="node/end"></span>
+							        <span class="gf_locations gf_links1" tal:attributes="data-location node/locationId" tal:content="node/location"></span>
+							        <span tal:attributes="class results/datecolor" tal:content="node/date"></span>
+							    </div>
+							    
+							    <div class="gf_attendence_opt" tal:condition="python: ((not context.portal_membership.isAnonymousUser()) and (node['isPublic'] or node['isCreator'])) ">
+							        <!--<span class="gf_attendence_clicks" tal:condition="not: node/isCreator">
+							            <span class="gf_links2" data-fun="remove"  tal:attributes="data-gfid node/id"  tal:condition="node/alreadyAttending">Remove Attendence?</span>
+							            <span class="gf_links2"  data-fun="set" tal:attributes="data-gfid node/id"  tal:condition="not: node/alreadyAttending">Join?</span>
+							        </span>-->
+							        <span tal:condition="node/isCreator">
+							            <form tal:condition="node/isRemovable" method="get" tal:attributes="action string:${context/absolute_url}/${view/__name__}">
+							                <input tal:attributes="value node/id" type="hidden" name="form.id" />
+							                <input class="context gf_button_to_link_look" type="submit" value="Cancel Your Group?" name="form.button.Save" onclick="if(!confirm('Are you sure you want to cancel your group?')){ return false;}" />
+							            </form>
+							            <span tal:condition="not: node/isRemovable" tal:content="node/creatorMessage"></span>
+							        </span>
+							    </div>
+							</div>
+		                </div>
+		            </div>
+		            <div class="gf_bottom_curve"><div class="gf_bar"></div></div>
+					<div tal:condition="results/mbar" class="gf_bar2"></div>
+				</tal:block>
+				<!-- Event Rows End -->
+				
+				<div class="gf_staff_link">
+				    <a tal:attributes="href view/aboutLink">About GroupFinder</a> 
+					<span> | </span>
+					<a tal:attributes="href string: ${context/absolute_url}/staff">Staff</a>
+				</div>
+				
+				<br />
+	            
+	        </div>
+	    </div>
+	</metal:content-core>
+</body>
+</html>

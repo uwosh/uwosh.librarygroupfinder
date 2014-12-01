@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<object name="portal_properties" meta_type="Plone Properties Tool">
+	 <object name="site_properties" meta_type="Plone Property Sheet">
+      </object> 
+	  
+	 <object name="base_paths" meta_type="Plone Property Sheet">
+	 	 <property name="title" type="string">Base Catalog Paths</property>
+		 <property name="help" type="text">These are the root paths for catalog queries.</property>
+		 <property name="base_groupfinder_path" type="string" purge="False">/sites1/libraryapp/groupfinder</property>
+      </object>
+	  
+	  
+	<object name="groupfinder_properties" meta_type="Plone Property Sheet">
+	 	<property name="title" type="string">GroupFinder Properties</property>
+		<property name="help" type="text">Various properties for groupfinder app.</property>
+		
+		<!-- This calendar is really public -->
+		<property name="google_main_calendar" type="string" purge="False">jddhd44evhje61lk98san123u8@group.calendar.google.com</property>
+		<property name="google_visibility" type="string" purge="False">private</property>
+		<property name="google_visibility_access" type="string" purge="False">full</property>
+		<property name="google_username" type="string" purge="False">polkservices@gmail.com</property>
+		<property name="google_password_base64" type="string" purge="False">xxx</property>
+    	<property name="google_service_source" type="string" purge="False">Polk-HoursLookup-1.0</property>
+		
+		<property name="email_reminder" type="boolean" purge="False">True</property>
+		<property name="email_reminder_executed_on" type="string" purge="False"></property>
+		<property name="email_creator_on_creation" type="boolean" purge="False">True</property>
+	</object>
+	  
+</object>

@@ -1,0 +1,108 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="uwosh.librarygroupfinder">
+<body>
+
+	<metal:js fill-slot="javascript_head_slot">
+		<script tal:attributes="src string: ++resource++uwosh.librarygroupfinder.javascripts/groupfinderform.js?cache=${view/cacheNumber}" type="text/javascript"></script>
+	</metal:js>
+    
+	<metal:content-title fill-slot="content-title">
+		<h1 class="documentFirstHeading">GroupFinder - Schedule a Study Group</h1>
+	</metal:content-title>
+	<metal:description fill-slot="content-description">
+		<!-- Do nothing, remove Title from Home page -->
+	</metal:description>
+
+	<metal:content-core fill-slot="content-core">
+	    <div id="gf_viewlet_content">
+	    
+			<div class="gf_content_form"  tal:condition="not: here/portal_membership/isAnonymousUser">
+				
+				<div class="gf_form_inputs">
+					
+					<div class="gf_title_heading">
+						Create Study Group
+					</div>
+					
+					<form method="get" tal:attributes="action string:${context/absolute_url}/${view/__name__}">
+					
+						<div id="gf_description_box" class="gf_div_spacer_l">
+							<div><label class="mytest_bolder">Group Description</label>&nbsp;<span class="fieldRequired" title="Required"> (Required) </span></div>
+							<div class="gf_div_spacer_s"><input id="gf_description_chooser" name="form.description" type="text" maxlength="40"/></div>
+						</div>
+						
+						<div id="gf_private_box" class="gf_div_spacer_l">
+							<div class="gf_div_spacer_s"><input name="form.private" value="True" type="checkbox" checked="checked" /> <span>Public Group - any students can attend</span></div>
+						</div>
+						
+						<div id="gf_date_box" class="gf_div_spacer_l">
+							<div><label>Date</label>&nbsp;<span class="fieldRequired" title="Required"> (Required) </span></div>
+							<div class="gf_div_spacer_s">
+	                            <input id="gf_date_chooser" name="form.date" type="text" readonly="readonly"/>
+	                            <img class="gf_loading1" src="++resource++uwosh.librarygroupfinder.stylesheets/images/gf_loading.gif" alt="loading" width="15" height="15" />
+	                        </div>
+	                        <div class="gf_date_warning">Groups created for today are not guaranteed a reservation.</div>
+	                    </div>
+						
+						<div id="gf_time_box" class="gf_div_spacer_l">
+							<div><label>Start Time</label>&nbsp;<span class="fieldRequired" title="Required"> (Required) </span></div>
+							<div class="gf_div_spacer_s">
+								<select id="gf_time_chooser" name="form.time"  disabled="disabled">
+									<option value="empty">Select a Date</option>
+								</select>
+								
+								<label> for </label>
+								<select id="gf_duration_chooser" name="form.duration" disabled="disabled">
+									<option value="empty"> </option>
+									<option value="30">30 Minutes</option>
+									<option value="60">1 Hour</option>
+									<option value="90">1 1/2 Hours</option>
+									<option value="120">2 Hours</option>
+								</select>
+							</div>
+						</div>
+						
+						<div id="gf_location_box" class="gf_div_spacer_l">
+							<div><label>Available GroupFinder Spaces</label>&nbsp;<span class="fieldRequired" title="Required"></span></div>
+							<div id="gf_location_radios" class="gf_div_spacer_s2">
+								<span>Please select a Time and Date.</span>
+							</div>
+						</div>
+						
+						<div class="gf_div_spacer_l">
+							<input type="hidden" name="form.submitted" value="1" />
+							<input id="gf_submitter" class="gf_disabled_button" type="submit" name="form.button.Save" value="Create Group" disabled="disabled"/>
+							<input type="submit" name="form.button.Cancel" value="Cancel" />
+						</div>
+						
+					</form>
+				</div>
+	            
+	            <div class="gf_help_panel">
+	                <div class="gf_title_heading">Three Easy Steps!</div>
+	                <div>
+	                    <ul style="margin-left: 15px;">
+	                        <li> Write a short description about your group.</li>
+	                        <li> Select the time and date you would like to meet.</li>
+	                        <li> Choose a location in Polk Library for your group.</li>
+	                        <li> Your information is kept anoynmous.</li>
+	                    </ul> 
+	                </div>
+	            </div>
+				
+				<tal:block tal:content="structure context/subview_locations" />
+			</div>
+	        
+	        <div tal:condition="here/portal_membership/isAnonymousUser">
+				<a tal:attributes="href string: ${context/absolute_url}/login_form"><img src="++resource++uwosh.librarygroupfinder.stylesheets/images/gf_login.png" alt="Please Login" /></a>
+	        	<br />
+				<br />
+				<br />	
+			</div>
+	       
+	    </div>
+	</metal:content-core>
+</body>
+</html>

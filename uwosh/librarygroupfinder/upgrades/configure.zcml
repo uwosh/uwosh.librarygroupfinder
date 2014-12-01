@@ -1,0 +1,115 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="uwosh.librarygroupfinder">
+       
+       
+    <gs:upgradeStep
+        title="Upgrade uwosh.librarygroupfinder to 1.4.1"
+        description="uwosh.librarygroupfinder upgrade step"
+        source="*"
+        destination="1.4.1"
+        handler=".upgrades.upgrade_to_1_4_1"
+        profile="uwosh.librarygroupfinder:default" />
+       
+    <gs:upgradeStep
+        title="Upgrade uwosh.librarygroupfinder to 1.4.6"
+        description="uwosh.librarygroupfinder upgrade step"
+        source="1.4.5"
+        destination="1.4.6"
+        handler=".upgrades.upgrade_to_1_4_6"
+        profile="uwosh.librarygroupfinder:default" />
+       
+    <gs:upgradeStep
+        title="Upgrade uwosh.librarygroupfinder to 1.5.0"
+        description="uwosh.librarygroupfinder upgrade step"
+        source="1.4.6"
+        destination="1.5.0"
+        handler=".upgrades.upgrade_to_1_5_0"
+        profile="uwosh.librarygroupfinder:default" />
+        
+    <gs:upgradeStep
+        title="Upgrade uwosh.librarygroupfinder to 1.5.1"
+        description="uwosh.librarygroupfinder upgrade step"
+        source="1.5.0"
+        destination="1.5.1"
+        handler=".upgrades.upgrade_to_1_5_1"
+        profile="uwosh.librarygroupfinder:default" />
+        
+    <gs:upgradeStep
+        title="Upgrade uwosh.librarygroupfinder to 1.5.2"
+        description="uwosh.librarygroupfinder upgrade step"
+        source="1.5.1"
+        destination="1.5.2"
+        handler=".upgrades.upgrade_to_1_5_2"
+        profile="uwosh.librarygroupfinder:default" />
+        
+    <gs:upgradeStep
+        title="Upgrade uwosh.librarygroupfinder to 1.5.3"
+        description="uwosh.librarygroupfinder upgrade step"
+        source="1.5.2"
+        destination="1.5.3"
+        handler=".upgrades.upgrade_to_1_5_3"
+        profile="uwosh.librarygroupfinder:default" />
+        
+    <gs:upgradeStep
+        title="Upgrade uwosh.librarygroupfinder to 1.5.4"
+        description="uwosh.librarygroupfinder upgrade step"
+        source="1.5.3"
+        destination="1.5.4"
+        handler=".upgrades.upgrade_to_1_5_4"
+        profile="uwosh.librarygroupfinder:default" />
+        
+    <gs:upgradeStep
+        title="Upgrade uwosh.librarygroupfinder to 1.5.5"
+        description="uwosh.librarygroupfinder upgrade step"
+        source="1.5.4"
+        destination="1.5.5"
+        handler=".upgrades.upgrade_to_1_5_5"
+        profile="uwosh.librarygroupfinder:default" />
+        
+    <gs:upgradeStep
+        title="Upgrade uwosh.librarygroupfinder to 1.5.6"
+        description="uwosh.librarygroupfinder upgrade step"
+        source="1.5.5"
+        destination="1.5.6"
+        handler=".upgrades.upgrade_to_1_5_6"
+        profile="uwosh.librarygroupfinder:default" />
+        
+    <gs:upgradeStep
+        title="Upgrade uwosh.librarygroupfinder to 1.5.7"
+        description="uwosh.librarygroupfinder upgrade step"
+        source="1.5.6"
+        destination="1.5.7"
+        handler=".upgrades.upgrade_to_1_5_7"
+        profile="uwosh.librarygroupfinder:default" />
+        
+    <gs:upgradeStep
+        title="Upgrade uwosh.librarygroupfinder to 1.5.8"
+        description="uwosh.librarygroupfinder upgrade step"
+        source="1.5.7"
+        destination="1.5.8"
+        handler=".upgrades.upgrade_to_1_5_8"
+        profile="uwosh.librarygroupfinder:default" />
+        
+    <gs:upgradeStep
+        title="Upgrade uwosh.librarygroupfinder to 1.5.9"
+        description="uwosh.librarygroupfinder upgrade step"
+        source="1.5.8"
+        destination="1.5.9"
+        handler=".upgrades.upgrade_to_1_5_9"
+        profile="uwosh.librarygroupfinder:default" />
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+</configure>

@@ -1,0 +1,57 @@
+<div class="gf_staff_row" tal:repeat="node view/getAllGFEvents" tal:attributes="style node/css">
+	
+	<div>
+		<label tal:content="node/location" title="Reserved location of scheduled group."/>
+		<span> for </span>
+		<span tal:content="node/Title" title="The name of scheduled group."/>
+	</div>
+	
+	<div style="border-bottom: 1px solid #dddddd; padding-bottom: 4px;">
+		<span tal:content="node/start" title="Time of reservation"/>
+		<span> to </span>
+		<span tal:content="node/end" title="Time of reservation"/>
+		
+		<div class="library_right">
+			<span title="This is a Public Group" style="margin-left: 4px; font-style:italic; color: darkgreen;" tal:condition="python:( view.isPublic(node['id']))">Public</span>
+			<span title="This is a Private Group" style="margin-left: 4px; font-style:italic; color: darkred;" tal:condition="python:(not view.isPublic(node['id']))">Private</span>
+			
+			<span> | </span>
+			<div class="library_right">
+				<form method="get" tal:attributes="action string: ${context/absolute_url}">
+					<input type="hidden" name="form.id" tal:attributes="value node/id" />
+					<input type="hidden" name="form.remove" value="1" />
+					<input title="Click to remove this group." style="cursor: pointer; border: 0px none; color: navy; background-image: none; padding: 0px;" type="submit" value="Remove" name="submit" onclick="if(!confirm('Remove Group?')){ return false;}" />
+				</form>
+			</div>
+			<div class="clear"></div>
+		</div>
+		
+	</div>
+	
+	<div class="sfont" style="margin-top: 5px;">
+		<div class="library_left tright" style="width: 90px;" title="This is who requested this reservation.">Requested By:&nbsp;</div>
+		<span style="float:left; font-style:italic;" tal:content="string:${node/requester}@uwosh.edu"  title="This is who requested this reservation." />
+	</div>
+	<div class="clear"></div>
+
+	
+	<div class="sfont" tal:condition="node/has_creator_info" style="padding-top: 3px;">
+		&nbsp;&nbsp;
+		<div class="library_left tright" style="width: 90px;" title="This is who scheduled this group.">Created By:&nbsp;</div>
+		<div class="library_left" style="font-style:italic;" tal:content="string:${node/creator}@uwosh.edu" title="This is who scheduled this group."></div>
+		
+	</div>
+	<div class="clear"></div>
+	
+	<div class="sfont" tal:condition="node/has_creator_info" style="padding-top: 3px;">
+		&nbsp;&nbsp;
+		<div class="library_left tright" style="width: 90px;" title="This is when this group was created.">Created On:&nbsp;</div>
+		<div class="library_left" style="font-style:italic;" tal:content="node/created" title="This is when this group was created."></div>
+	</div>
+	<div class="clear"></div>
+	
+</div>
+
+<div tal:condition="python:( len(view.getAllGFEvents()) == 0)">
+	<span>No Scheduled Groups.</span>
+</div>

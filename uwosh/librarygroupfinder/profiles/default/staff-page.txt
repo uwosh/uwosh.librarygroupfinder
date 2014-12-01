@@ -1,0 +1,7 @@
+<!-- Comment Tag, not visible on page -->
+<!-- Default Staff Page created during install -->
+<p>Here are the links to the GroupFinder Schedules.</p>
+<p><a class="external-link" href="staff-printables/groupfinderPrint?option=entrance">Entrance Sheet</a></p>
+<p><a class="external-link" href="staff-printables/groupfinderPrint?option=office">Office Sheets</a></p>
+<p><a class="external-link" href="staff-printables/groupfinderPrint?option=tables">Table Sheets (One-Sided)</a></p>
+<p><a class="external-link" href="staff-printables/groupfinderPrint?option=tables&sides=2">Table Sheets (Two-Sided)</a></p>

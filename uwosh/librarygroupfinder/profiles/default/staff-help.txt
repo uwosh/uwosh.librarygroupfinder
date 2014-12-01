@@ -1,0 +1,15 @@
+<!-- Comment Tag, not visible on page -->
+<!-- Default Staff Page created during install -->
+<p><b>How to Schedule a Group?</b></p>
+<ol>
+<li>Ask  Students for their Email, enter it in the Email Field.</li>
+<li>Ask the Student what they would like to call their group, enter it in the Group Description Field.</li>
+<li>Ask the Student what Date they would like, select the Date from the Calendar.</li>
+<li>Ask the Student what Time they would like, select a available time slot.</li>
+<li>Ask the Student what Location they would like, select a location.</li>
+<li>Ask the Student if they would like to Advertise their Group.  If Yes, check the checkbox.  If they would like it to be Private, uncheck the checkbox.</li>
+</ol>
+<p> </p>
+<p><b>Public Event?</b></p>
+<p>If <i>checked</i>, it would allow the Group to be Advertised and allow other students to attend the Group Study.</p>
+<p>If <i>unchecked</i>, it will be private and not advertised.</p>

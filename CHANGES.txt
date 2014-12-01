@@ -1,0 +1,261 @@
+Changelog
+=========
+
+1.5.9
+-------------------
+- Increase lookup time from 120 days to one year.
+
+1.5.8
+-------------------
+- Fixed bug in staff interface.
+
+1.5.7
+-------------------
+- Added location template to stop errors
+- Renamed email server to new campus standard.
+
+1.5.6
+-------------------
+- Fix daylight savings bug.
+
+1.5.5
+-------------------
+- Adjusted printable documents format
+- Switched login_form target
+- Changed order of locations in staff interface, now based on order.
+
+1.5.4
+-------------------
+- Strange bug appeared since migrating site in _createObject
+
+1.5.3
+-------------------
+- Made locations sortable
+- Changed student form to accommodate new location
+
+1.5.2
+-------------------
+- Fixed jquery ui dup issue
+
+1.5.1
+-------------------
+- Fixed jquery ui issue.
+
+1.5.0
+-------------------
+- Now themed to the new library website.
+- Made many CSS/HTML/JS changes.
+- SVN was branched here.
+
+1.4.6
+-------------------
+- Fixed daylight savings bug.  Both Plone DateTime and python datetime where adding an hour, I made it all Plone DateTime.
+
+1.4.5
+-------------------
+- 1.4.1 through this have been rapid release to beat semester deadline.
+
+1.4.3
+-------------------
+- Forgot to add locations.
+
+1.4.2
+-------------------
+- Adjusted staff interface per their request.
+
+1.4.1
+-------------------
+- Major changes.
+- Durations now in minutes.
+- Emails all group creators day before group meets as a reminder.
+- Deletion handling, moves to bin.
+- Join option is disabled.
+- New staff interface.
+
+1.4.0
+-------------------
+- Major changes.
+- Removed all web services to new uwosh.library.ws.
+- Changed HoursLookup to be Plony.
+
+1.3.16
+-------------------
+- Extended Web Service for Joel.
+- Added online/hybrid/studyabroad/independent study web services
+
+1.3.15
+-------------------
+- Extended Web Service for Joel.
+
+1.3.14
+-------------------
+- Added Web Service for Joel.
+
+
+1.3.10
+-------------------
+- Changed name/controller of solr web service.
+
+
+1.3.9
+-------------------
+- (Egg replaced by 1.3.10)
+- Added Solr Web Service
+- Added Adapter to Plone DateTime to enforce GMT standard.
+
+
+1.3.8
+-------------------
+- Specific date selection setup for Version 2 of LibraryHours
+- Fixed Reservation Bug, weird.
+
+1.3.7
+-------------------
+- Additional ZODB for Web Services.
+
+1.3.6
+-------------------
+- Webservices are now versioned.
+- WS getLibraryHours is now on version 2
+- HoursLookup has now been extended and added a layer of hashmap caching.
+- Staff UI has been updated, enable/disable of fields.
+
+
+1.3.5
+-------------------
+- Changed wording/terminology according to our communications dept.
+- Added warnings for Staff Page to warn if form submissions aren't completed correctly.
+- Added Migration Script.  Migrates content under 1.3.3 to new form.
+
+
+1.3.4
+-------------------
+- Location XML is gone,  added Group Location Content Type
+- Added Group Specialist Content Type
+- Limited Available Time Listing
+
+
+1.3.3
+-------------------
+- Added warnings to javascript.
+
+
+1.3.2
+-------------------
+- Caching issue fixed.
+
+
+1.3.1
+-------------------
+- Added Editable Skin Footer.
+- Fixed Hours Lookup, small bug.
+- Extended Scheduling and Viewing ranges.
+- Changed wording in certain areas.
+
+
+1.3.0
+-------------------
+- first prod.
+
+
+1.2.8
+-------------------
+- added new pdf print option.  Entrance.pdf
+
+
+1.2.7
+-------------------
+- prod version.
+
+1.2.6
+-------------------
+- Web services now return xml,json,jsonp
+- staff permissions adjusted
+- Possible candidate for first prod version.
+
+1.2.5b
+-------------------
+- Added Email options in Site_Properties
+- Email on/off for User Receipts
+- Email on/off for Staff Receipts
+
+
+1.2.1b
+-------------------
+- Fixed html rendering issue that happens in Firefox 3.6*
+
+1.2.0b
+-------------------
+- Installation auto-published GroupFinder Folder.
+- Changed GroupFinderEvent creation method.
+- Fixed creation permission issues.
+
+1.1.9b
+-------------------
+- Fixed Viewing issue (css,javascript,html).
+- Fixed View Permission.
+
+1.1.8b
+-------------------
+- Fixed DateTime issue, no longer always GMT-0.
+- Adjusted Permissions, now confidential.
+- Added view for single GroupFinder events.
+- Fixed link issues.
+- Tested in Chrome,Firefox,IE8
+
+1.1.7b
+-------------------
+- Refactored setup process.
+- Fixed staff link issue.
+
+1.1.6b
+-------------------
+- Installable on Plone 4
+
+1.1.5a (alpha-release)
+-------------------
+
+- Added more Automated Setup Functionality
+- Redesigned About page.
+- Fixed phrases and wording.
+- Fixed Logout bug, back button bug.
+
+1.1.4a (alpha-release)
+-------------------
+
+- Finished PDF Services
+- Added about page template
+- Added Staff Folder setups
+  - Create on install
+  - Protected for staff
+- Fixed css issues
+- Setup custom breadcrumbs
+
+
+1.1.3a (alpha-release)
+-------------------
+
+- Finished Webservices
+
+
+1.1.2a (alpha-release)
+-------------------
+
+- Fixed egg issues
+
+1.1.1a (alpha-release)
+-------------------
+
+- Finished Groupfinder content types.
+- Auto-Setup on Install
+
+1.0 - 1.1 (unreleased)
+----------------
+
+- Core Product Construction
+
+1.0 (unreleased)
+----------------
+
+- Created recipe with ZopeSkel
+  [David Hietpas]

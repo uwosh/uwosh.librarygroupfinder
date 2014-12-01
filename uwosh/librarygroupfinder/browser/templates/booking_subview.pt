@@ -1,0 +1,14 @@
+<div id="gf_bookings">
+	
+	<div>
+		<label>Select Date to View:</label>
+		<input id="gf_booking_chooser" type="text" name="date" tal:attributes="value view/get_date_from_create" readonly="readonly" />
+		<img class="gf_loading3" src="++resource++uwosh.librarygroupfinder.stylesheets/images/gf_loading.gif" alt="loading" width="15" height="15" />
+	</div>
+	
+	
+	<div id="gf_bookings_info"></div>
+	<div style="clear:both;"></div>
+	
+</div>
+

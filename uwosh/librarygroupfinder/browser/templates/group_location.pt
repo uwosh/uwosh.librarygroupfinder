@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="uwosh.librarygroupfinder">
+<body>
+
+	<metal:content-core fill-slot="content-core">
+		
+		<div>
+			This study space for University of Oshkosh students, faculty and staff.  To schedule this study space please visit 
+			<a href="http://www.uwosh.edu/library/groupfinder">GroupFinder</a>
+		</div>
+		
+	</metal:content-core>
+	
+</body>
+</html>

@@ -1,0 +1,50 @@
+
+<div class="gf_info_window" tal:define="nodes view/getInfo" tal:repeat="node nodes">
+	<div class="gf_info_arrow"></div>
+	<div class="gf_info_window_inner">
+		<div>
+			<div class="gf_div_label">Group:</div>
+			<span tal:content="python:view.getTitle(node['id'],node['Title'])"></span>
+		</div>
+		
+		<div>
+			<div class="gf_div_label">Start:</div>
+			<span tal:content="python:view.format(node['start'])"></span>
+		</div>
+		
+		<div>
+			<div class="gf_div_label">End:</div>
+			<span tal:content="python:view.format(node['end'])"></span>
+		</div>
+		
+		<div tal:condition="view/isMod">
+			<div class="gf_div_label">Requested By:</div>
+			<span tal:content="python:view.getRequester(node['listCreators'])"></span>
+		</div>
+		
+		<div tal:condition="view/isMod">
+			<div class="gf_div_label">Created By:</div>
+			<span tal:content="python:view.getCreator(node['listCreators'])"></span>
+		</div>
+		
+		<div tal:condition="view/isMod">
+			<div class="gf_div_label">Created On:</div>
+			<span tal:content="python:view.format(node['modified'])"></span>
+		</div>
+		
+		<div id="gf_staff_rm_fix" tal:condition="view/isMod" style="text-align: right !important;">
+			<form method="get" tal:attributes="action string: ${context/absolute_url}/bookings_info">
+				<span>
+					<input type="hidden" name="id" tal:attributes="value node/id" />
+					<input id="gf_staff_rm_date" type="hidden" name="date" value="" />
+					<input type="hidden" name="remove" value="1" />
+					<input type="hidden" name="random" tal:attributes="value view/bypass_cache" />
+					<input title="Click to remove this group." style="cursor: pointer; border: 0px none; color: navy; background-image: none; padding: 0px;" type="submit" value="Remove" name="submit" onclick="bypassInfoClose(); if(!confirm('Remove Group?')){ return false;}" />
+				</span>
+			</form>
+		</div>
+		
+
+	</div>
+	
+</div>

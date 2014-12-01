@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="uwosh.librarygroupfinder">
+<body>
+
+
+	<metal:js fill-slot="javascript_head_slot">
+		<script src="++resource++uwosh.librarythemeold.javascripts/jquery-ui.js" type="text/javascript"></script>
+		<script tal:attributes="src string: ++resource++uwosh.librarygroupfinder.javascripts/groupfinderbooking.js?cache=${view/cacheNumber}" type="text/javascript"></script>
+	</metal:js>
+
+	<metal:content-title fill-slot="content-title">
+		<!-- Do nothing, remove Title from Home page -->
+	</metal:content-title>
+	<metal:description fill-slot="content-description">
+		<!-- Do nothing, remove Title from Home page -->
+	</metal:description>
+
+	<metal:content-core fill-slot="content-core">
+	    <tal:insert content="structure context/sv_bookings" />
+	</metal:content-core>
+</body>
+</html>

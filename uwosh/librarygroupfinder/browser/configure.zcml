@@ -1,0 +1,146 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="uwosh.librarygroupfinder">
+
+  <include package="plone.app.contentmenu" />
+
+	<!-- Marker is restricted to correct folders in setupHandler -->
+    <class class="Products.ATContentTypes.interface.folder.IATFolder">
+        <allow interface=".formview.IFormViewMarker" />
+        <allow interface=".staffview.IStaffViewMarker" />
+        <allow interface=".staffview.IStaffSubViewMarker" />
+        <allow interface=".print.IPrintMarker" />
+        <allow interface=".mainview.IMainViewMarker" />
+    </class> 
+
+    <browser:page
+		for="..content.groupLocation.IGroupLocation"
+		name="group_location"
+		template="templates/group_location.pt"
+		permission="zope2.View"
+    />
+
+	<browser:page
+		for=".formview.IFormViewMarker"
+		name="create"
+		class=".formview.FormView"
+		template="templates/formview.pt"
+		permission="zope.Public"
+    />
+	  	
+	<browser:page
+		for=".mainview.IMainViewMarker"
+		name="groupfinder_homepage"
+		class=".mainview.MainView"
+		template="templates/mainview.pt"
+		permission="zope.Public"
+    />
+    	
+	<browser:page
+		for=".staffview.IStaffViewMarker"
+		name="groupfinder_staff_view"
+		class=".staffview.StaffView"
+		template="templates/staffview.pt"
+		permission="zope2.View"
+    />
+    
+	<browser:page
+		for="*"
+		name="bookings"
+		class=".staffview.BookingMainView"
+		template="templates/booking_view.pt"
+		permission="zope2.View"
+    />
+    <browser:page
+		for="*"
+		name="bookings_info"
+		class=".staffview.BookingViewInfo"
+		template="templates/booking_info.pt"
+		permission="zope2.View"
+    />
+    <browser:page
+		for="*"
+		name="sv_bookings"
+		class=".staffview.BookingSubView"
+		template="templates/booking_subview.pt"
+		permission="zope2.View"
+    />
+    
+	<browser:page
+		for="*"
+		name="gfevent"
+		class=".mainview.EventView"
+		template="templates/gfevent.pt"
+		permission="zope.Public"
+    />
+    
+	<browser:page
+		for="*"
+		name="getLocations"
+		class=".locations.Locations"
+		permission="zope.Public"
+    />
+	
+	<browser:page
+		for="*"
+		name="getHours"
+		class=".libraryhours.LibraryHours"
+		permission="zope.Public"
+    />
+    
+    <browser:page
+		for="*"
+		name="attendee"
+		class=".attendees.Attendee"
+		permission="zope.Public"
+    />
+	
+    <browser:page
+		for="*"
+		name="groupfinderPrint"
+		class=".print.Print"
+		permission="zope.Public"
+    />
+    
+    <browser:page
+		for="*"
+		name="groupfinderReminder"
+		class=".emailer.AutoEmailReminders"
+		permission="zope.Public"
+    />
+    
+    <!-- SUB VIEWS -->	
+    
+    <browser:page
+		for="*"
+		name="subview_locations"
+		template="templates/subview_locations.pt"
+		permission="zope.Public"
+    />
+    
+    <browser:page
+		for=".staffview.IStaffSubViewMarker"
+		name="subview_gfstaff"
+		class=".staffview.SubViewStaffListing"
+		template="templates/subview_gfstaff.pt"
+		permission="zope2.View"
+    />
+  
+
+
+    <!-- RESOURCES -->
+    <browser:resourceDirectory
+        name="uwosh.librarygroupfinder.stylesheets"
+        directory="stylesheets"
+        layer="..interfaces.interfaces.IThemeSpecific"
+    />
+    
+    <browser:resourceDirectory
+        name="uwosh.librarygroupfinder.javascripts"
+        directory="javascripts"
+        layer="..interfaces.interfaces.IThemeSpecific"
+    />
+
+    
+</configure>

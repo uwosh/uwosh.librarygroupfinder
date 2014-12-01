@@ -1,0 +1,110 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="uwosh.librarygroupfinder">
+<body>
+
+	<metal:styleslot fill-slot="style_slot">
+		<style>
+			#gf_staff_submit { text-shadow: none !important;  }
+			#gf_staff_submit:hover { border-radius: 10px; box-shadow: 0px 0px 1px 0px #000000; }
+		</style>
+	</metal:styleslot>
+	
+	<metal:js fill-slot="javascript_head_slot">
+		<script tal:attributes="src string: ++resource++uwosh.librarygroupfinder.javascripts/groupfinderstaff.js?cache=${view/cacheNumber}" type="text/javascript"></script>
+		<script tal:attributes="src string: ++resource++uwosh.librarygroupfinder.javascripts/groupfinderbooking.js?cache=${view/cacheNumber}" type="text/javascript"></script>
+	</metal:js>
+    
+	<metal:content-title fill-slot="content-title">
+		<h1 class="documentFirstHeading">GroupFinder - Staff Scheduling Page</h1>
+	</metal:content-title>
+	<metal:description fill-slot="content-description">
+		<!-- Do nothing, remove Title from Home page --> 
+	</metal:description>
+	
+	<metal:content-core fill-slot="content-core">
+
+		<div id="gf_staff">
+
+			<div class="gf_staff_form">
+				
+				<div style="float: left; width:500px; height: 220px; padding-right: 50px; padding: 10px; " class="gf_staff_form_box">
+					<form method="get" action="">
+							<div class="gf_staff_input_box">
+								<div class="gf_staff_label_fixed"><span class="gf_staff_required">*</span><label>Student's Email:</label></div>
+								<input id="gf_staff_email" class="gf_staff_input" type="text" name="form.email" />
+							</div>
+							
+							<div class="gf_staff_input_box" style="height: 15px;">
+								<div class="gf_staff_label_fixed"><span class="gf_staff_required">*</span><label>Public Event:</label></div>
+								<input id="gf_staff_public_chooser" name="form.private" value="True" type="checkbox" />
+							</div>
+	
+							<div class="gf_staff_input_box">
+								<div class="gf_staff_label_fixed"><span class="gf_staff_required">*</span><label>Group Description:</label></div>
+								<input id="gf_staff_desc_chooser" class="gf_staff_input" type="text" name="form.description" />
+							</div>
+							
+							<div class="gf_staff_input_box">
+								<div class="gf_staff_label_fixed"><span class="gf_staff_required">*</span><label>Date:</label></div>
+								<input id="gf_staff_date_chooser" class="gf_staff_input_s" type="text" name="form.date" readonly="readonly" />
+								<img class="gf_loading1" src="++resource++uwosh.librarygroupfinder.stylesheets/images/gf_loading.gif" alt="loading" width="15" height="15" />
+							</div>
+	
+							<div class="gf_staff_input_box">
+								<div class="gf_staff_label_fixed"><span class="gf_staff_required">*</span><label>Start Time:</label></div>
+								<select id="gf_staff_start_chooser" name="form.start" disabled="disabled">
+									<option value="">Select a date above.</option>
+								</select>
+							</div>
+		
+							<div class="gf_staff_input_box">
+								<div class="gf_staff_label_fixed"><span class="gf_staff_required">*</span><label>Duration:</label></div>
+								<select id="gf_staff_end_chooser" name="form.end" disabled="disabled">
+									<option value="">Select a start time above.</option>
+								</select>
+								<img class="gf_loading2" src="++resource++uwosh.librarygroupfinder.stylesheets/images/gf_loading.gif" alt="loading" width="15" height="15" />
+							</div>
+							
+							<div class="gf_staff_input_box">
+								<div class="gf_staff_label_fixed"><span class="gf_staff_required">*</span><label>Group Location:</label></div>
+								<select id="gf_staff_location_chooser" name="form.location" disabled="disabled">
+									<option value="">Select a duration above.</option>
+								</select>
+							</div>
+							
+							
+							<div class="gf_staff_submit_box">
+								<span class="gf_staff_required gf_staff_required_msg" style="margin-top: 8px;">* Required</span>
+								<input id="gf_staff_submit" type="submit" value="" name="form.submit" />
+								<input type="hidden" value="1" name="form.submission" />
+								
+							</div>
+					</form>
+				</div>
+				
+				
+				<div class="gf_staff_form_box" style="float: left; width: 200px; height: 220px; padding: 10px;  margin-left: 18px;">
+					<div style="padding-bottom: 5px;"><label style="text-decoration: underline;">Help and Options</label></div>
+					<div><a href="staff-printables">Staff Printables</a></div>
+					<div><a href="staff-help">Need Help?</a></div>
+				</div>
+			</div>
+			
+			
+			<br /><br />
+			
+			<div id="gf_staff_search">
+				<tal:insert content="structure context/sv_bookings" />
+			</div>
+			
+		</div>
+
+		
+
+
+	</metal:content-core>
+	
+</body>
+</html>

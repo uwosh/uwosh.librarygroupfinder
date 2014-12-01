@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="uwosh.librarygroupfinder">
+
+  <!-- configure your content components here -->
+  
+  <!-- -*- extra stuff goes here -*- -->
+  <class class=".groupFinderEvent.IGroupFinderEvent">
+    <require
+        permission="zope2.View"
+        interface=".groupFinderEvent.IGroupFinderEvent"
+        />
+  </class>
+  
+  <class class=".groupSpecialist.GroupSpecialist">
+    <require
+        permission="zope2.View"
+        interface=".groupSpecialist.IGroupSpecialist"
+        />
+  </class>
+  
+  <class class=".groupLocation.GroupLocation">
+    <require
+        permission="zope2.View"
+        interface=".groupLocation.IGroupLocation"
+        />
+  </class>
+  
+</configure>

@@ -1,0 +1,16 @@
+<!-- Comment Tag, not visible on page -->
+<!-- Default About Page created during install -->
+<p><strong>What is GroupFinder?</strong></p>
+<ul><li>GroupFinder allows students to schedule and organize study groups here on campus.</li></ul>
+<p><br /><strong>How does it work?</strong></p>
+<ul><li>Click the "Create Group" button on the GroupFinder homepage.&nbsp; Then simply fill out a study group form.&nbsp; Once you create a group it will be visible on the homepage.</li></ul>
+<p><br /><strong>Who can use it?</strong></p>
+<ul><li>Any individual with a UWO email account can use GroupFinder.</li></ul>
+<p>&nbsp;</p>
+<p><strong>Can I remove my group?</strong></p>
+<ul><li>Yes, only if you are the only person attending.<br /></li></ul>
+<p><br /><strong>If I join another group or start a group, do others know who I am?</strong></p>
+<ul><li>No, your information is private.</li></ul>
+<p>&nbsp;</p>
+<p><strong>GroupFinder Created By</strong></p>
+<ul><li>David Hietpas, Library Web Developer - UW Oshkosh</li></ul>
